@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=hero_amw
+    volumes:
+      - ./_docker_volumes/pg_data:/var/lib/postgresql/data
+
+  django:
+    depends_on:
+      - postgres
+    volumes:
+      - ./_docker_volumes/backend/static:/web/static
+      - ./_docker_volumes/backend/media:/web/media
+    environment:
+      - DJANGO_SECRET_KEY
+      - DJANGO_DEBUG
+      - DJANGO_ALLOWED_HOSTS
+      - DATABASE_URL
+      - CORS_ORIGIN_WHITELIST
