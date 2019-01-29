@@ -1,0 +1,33 @@
+# Core
+Django
+django-environ
+django-filter
+django-model-controller
+django-bulk-update
+
+# Image Field
+Pillow
+
+# Postgres Adapter
+psycopg2-binary
+
+# Django REST framework, JSON Web Token Authentication and Swagger
+djangorestframework
+djangorestframework-jwt
+django-cors-headers
+
+# Datetime
+Babel
+
+# Debugging only on Local environment
+django-debug-toolbar
+django-extensions
+
+# Production running
+gunicorn
+
+# Enhance debug
+ipdb
+
+# Testing
+django-test-without-migrations

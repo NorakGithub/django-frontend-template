@@ -1,0 +1,27 @@
+FROM python:3.6-alpine
+ENV PYTHONUNBUFFERED 1
+
+# Location of source code
+ENV PROJECT_ROOT /opt/app
+RUN mkdir /web
+WORKDIR /web
+
+# Copying requirements
+COPY __init__.py manage.py requirements.txt ./
+
+# Install OS Library for Python Package
+RUN apk add --no-cache --virtual .build-deps \
+    ca-certificates gcc postgresql-dev linux-headers musl-dev \
+    libffi-dev jpeg-dev zlib-dev gettext-dev
+
+RUN pip install -r requirements.txt
+
+# Copy Source File
+COPY apps ./apps
+COPY config ./config
+COPY localizations ./localizations
+COPY static_files ./static_files
+COPY templates ./templates
+
+# Compile messages for translation
+RUN python manage.py compilemessages
