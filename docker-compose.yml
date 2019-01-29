@@ -5,7 +5,7 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=hero_amw
+      - POSTGRES_DB=ChangeDBName
     volumes:
       - ./_docker_volumes/pg_data:/var/lib/postgresql/data
 
