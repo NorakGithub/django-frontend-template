@@ -16,6 +16,7 @@ from .installed_apps import *
 from .databases import *
 from .rest_framework import *
 from .storages import *
+from .debug_toolbar import *
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
