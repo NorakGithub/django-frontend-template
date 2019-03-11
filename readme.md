@@ -6,7 +6,7 @@ Template for starting backend with Django and frontend with any choices of your.
 - Postgres 10
 
 ## When should you use this template?
-- When you know sure that you are choosing for your API Backend.
+- When you surely know that you are choosing Django for your API Backend.
 
 ## The Goal of This Template
 - Allow you to choose which frontend technology you want.
